@@ -1,10 +1,22 @@
+/*
+ * @Author: ylyu
+ * @Date: 2021-12-22 14:18:32
+ * @LastEditors: ylyu
+ * @LastEditTime: 2021-12-22 17:44:20
+ * @Description:
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Button } from './Button'
-import './header.css'
+import { Button } from '../Button'
+import './index.css'
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export const Header: React.FC<any> = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}) => (
   <header>
     <div className="wrapper">
       <div>
@@ -33,7 +45,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <Button primary size="small" onClick={onLogout} label="Log out" />
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
