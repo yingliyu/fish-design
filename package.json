@@ -17,7 +17,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "rm -rf ./dist/docs && build-storybook -o ./dist/docs",
+    "build-storybook-docs": "build-storybook -s public --docs",
+    "docs:deploy": "scripts/build-gh.sh",
+    "gh-pages": "npm run build-storybook -- -o _gh-pages && gh-pages -d _gh-pages && rm -rf _gh-pages"
   },
   "eslintConfig": {
     "extends": [
