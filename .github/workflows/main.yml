@@ -1,4 +1,4 @@
-name: Storybook deployer # Actions 名字
+name: Deployer # Actions 名字
 
 on: # 触发条件
   push:
