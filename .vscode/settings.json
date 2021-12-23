@@ -1,0 +1,26 @@
+{
+  "editor.tabSize": 2,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true, // #每次保存的时候自动格式化
+  "eslint.options": {
+    //指定vscode的eslint所处理的文件的后缀
+    "extensions": [".js", ".vue", ".ts", ".tsx"]
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.format.enable": true,
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html"],
+  "eslint.alwaysShowStatus": true,
+  "prettier.semi": true,
+  //  #使用单引号替代双引号
+  "prettier.singleQuote": true,
+  //  #让函数(名)和后面的括号之间加个空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
+}
