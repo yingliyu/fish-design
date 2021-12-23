@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-22 17:52:21
+ * @LastEditTime: 2021-12-23 09:18:35
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react'
@@ -27,6 +27,7 @@ Primary.args = {
   primary: true,
   label: 'Button',
 }
+
 // Primary.storyName = 'I am the primary'
 export const Secondary: ComponentStory<typeof Button> = Template.bind({})
 Secondary.args = {
