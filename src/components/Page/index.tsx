@@ -1,10 +1,22 @@
+/*
+ * @Author: ylyu
+ * @Date: 2021-12-22 14:18:32
+ * @LastEditors: ylyu
+ * @LastEditTime: 2021-12-23 09:28:13
+ * @Description:
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 
 import { Header } from '../Header'
 import './index.css'
 
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export const Page: React.FC<any> = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}) => (
   <article>
     <Header
       user={user}

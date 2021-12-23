@@ -1,3 +1,10 @@
+/*
+ * @Author: ylyu
+ * @Date: 2021-12-22 14:18:32
+ * @LastEditors: ylyu
+ * @LastEditTime: 2021-12-23 09:27:35
+ * @Description:
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 import './index.css'
@@ -5,7 +12,13 @@ import './index.css'
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
+export const Button: React.FC<any> = ({
+  primary,
+  backgroundColor,
+  size,
+  label,
+  ...props
+}) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary'
