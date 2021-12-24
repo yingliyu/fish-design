@@ -2,12 +2,12 @@
  * @Author: ylyu
  * @Date: 2021-12-23 10:54:02
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-23 10:54:02
- * @Description: 带发送验证码功能的input组件
+ * @LastEditTime: 2021-12-24 11:22:42
+ * @Description: 发送验证码输入框
  */
-import React, { useState, FC } from 'react';
+import React, { useState } from 'react';
 import { Input } from 'antd';
-import { InputProps } from 'antd/lib/input';
+import type { InputProps } from 'antd';
 import classNames from 'classnames';
 
 export interface InputVerifyProps extends InputProps {
@@ -23,9 +23,8 @@ export interface InputVerifyProps extends InputProps {
   codeClassname?: string;
 }
 
-export const InputVerify: FC<InputVerifyProps> = (props) => {
+export const InputVerify: React.FC<InputVerifyProps> = (props) => {
   const { sendCode, countDown, initCodeText, reCodeText, codeClassname, ...restProps } = props;
-
   const [codeText, setCodeText] = useState(initCodeText);
   const [codeStatus, setCodeStatus] = useState(false);
 

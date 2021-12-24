@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-23 18:09:00
+ * @LastEditTime: 2021-12-24 09:57:30
  * @Description: 添加 Typescript 支持
  */
 const path = require('path');
@@ -14,13 +14,20 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/preset-create-react-app',
+    {
+      name: '@storybook/preset-create-react-app',
+      options: {
+        craOverrides: {
+          fileLoaderExcludes: ['less'],
+        },
+      },
+    },
   ],
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
   },
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (webpackConfig, { configType }) => {
     // config.module.rules.push({
     //   test: /\.(ts|tsx)$/,
     //   use: [
@@ -31,7 +38,7 @@ module.exports = {
     //       },
     //     },
     //   ],
-    // })
+    // });
 
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
@@ -40,14 +47,14 @@ module.exports = {
     // config.resolve.alias = {
     //   '@': path.resolve(__dirname, 'src'),
     // };
-    config.resolve.plugins = [
-      ...(config.resolve.plugins || []),
+    webpackConfig.resolve.plugins = [
+      ...(webpackConfig.resolve.plugins || []),
       new TsconfigPathsPlugin({
-        extensions: config.resolve.extensions,
+        extensions: webpackConfig.resolve.extensions,
       }),
     ];
     // Make whatever fine-grained changes you need
-    config.module.rules.push({
+    webpackConfig.module.rules.push({
       test: /\.less$/,
       use: [
         'style-loader',
@@ -61,10 +68,10 @@ module.exports = {
           },
         },
       ],
-      include: [path.resolve(__dirname, '../src'), /[\\/]node_modules[\\/].*antd/],
+      include: [path.resolve(__dirname, '../'), /[\\/]node_modules[\\/].*antd/],
     });
 
-    return config;
+    return webpackConfig;
     // return {
     //   ...config,
     //   module: { ...config.module, rules: custom.module.rules },

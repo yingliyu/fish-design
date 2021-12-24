@@ -2,11 +2,11 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-23 16:06:48
+ * @LastEditTime: 2021-12-24 10:56:46
  * @Description:
  */
-import { addDecorator, configure } from '@storybook/react';
-import WrapperDecorator from './decorators/WrapperDecorator';
+// import { addDecorator, configure } from '@storybook/react';
+// import WrapperDecorator from './decorators/WrapperDecorator';
 import 'antd/dist/antd.less'; // 引入 antd 样式
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -30,4 +30,4 @@ export const parameters = {
 // configure(loaderFn, module)
 
 // 通过addDecorator添加插件
-addDecorator(WrapperDecorator);
+// addDecorator(WrapperDecorator);

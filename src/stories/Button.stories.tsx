@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-23 14:45:57
+ * @LastEditTime: 2021-12-24 10:54:06
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -10,7 +10,7 @@ import { Button } from '../components/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Design System/General/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -36,19 +36,20 @@ Primary.args = {
 //   },
 // })
 // Primary.storyName = 'I am the primary'
-export const Secondary: ComponentStory<typeof Button> = Template.bind({});
-Secondary.args = {
-  // label: 'Button',
+export const Danger: ComponentStory<typeof Button> = Template.bind({});
+Danger.args = {
+  label: 'Button',
+  danger: true,
 };
 
 export const Large: ComponentStory<typeof Button> = Template.bind({});
 Large.args = {
   size: 'large',
-  // label: 'Button',
+  label: 'Button',
 };
 
 export const Small: ComponentStory<typeof Button> = Template.bind({});
 Small.args = {
   size: 'small',
-  // label: 'Button',
+  label: 'Button',
 };
