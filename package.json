@@ -1,7 +1,24 @@
 {
-  "name": "fish-design",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fish-design-pro",
+  "version": "0.1.2",
+  "private": false,
+  "description": "A library of react components, which mainly stores components that can be reused by all business lines of AI-Indeeded Company.",
+  "author": "ylyu",
+  "keywords": [
+    "React",
+    "Component"
+  ],
+  "homepage": "https://yingliyu.github.io/fish-design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yingliyu/fish-design.git"
+  },
+  "files": [
+    "build"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -26,8 +43,11 @@
     "build-storybook-docs": "build-storybook -s public --docs",
     "docs:deploy": "scripts/build-gh.sh",
     "gh-pages": "npm run build-storybook -- -o _gh-pages && gh-pages -d _gh-pages && rm -rf _gh-pages",
+    "lint": "eslint --ext .ts --ext .tsx src/  --fix",
+    "clean": "rimraf ./dist",
     "build:ts": "tsc -p tsconfig.build.json",
-    "lint": "eslint --ext .ts --ext .tsx src/  --fix"
+    "build:css": "lessc ./src/styles/index.less ./dist/index.css",
+    "build:pub": "npm run clean && npm run build:ts && npm run build:css"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +65,7 @@
       }
     ]
   },
+  "license": "MIT",
   "browserslist": {
     "production": [
       ">0.2%",
