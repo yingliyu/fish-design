@@ -29,7 +29,7 @@ jobs:
         env:
           GH_REF: github.com/yingliyu/fish-design.git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github token
-          GITEE_REF: gitee.com/yylcode6/fish-design.git
+          GITEE_REF: gitee.com/yingliyu-code/fish-design.git
           ACCESS_GITEE_TOKEN:  ${{ secrets.ACCESS_TOKEN }} # gitee token
         run: |
           git config --global user.name "yingliyu"
@@ -46,11 +46,12 @@ jobs:
           git push --force --quiet "https://${ACCESS_TOKEN}@${GH_REF}" gh-pages:gh-pages
           git push --force --quiet "https://${ACCESS_GITEE_TOKEN}@${GITEE_REF}" gh-pages:gh-pages
     # 发布到 npm 上
-      - provider: npm
-        skip_cleanup: true
-        email: 404997046@@qq.com
-        api_key:
-          secure: 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
-        on:
-          branch: master
-          repo: yingliyu/fish-design
+      - name: npm
+        run: |
+          skip_cleanup: true
+          email: 404997046@@qq.com
+          api_key:
+            secure: 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
+          on:
+            branch: master
+            repo: yingliyu/fish-design
