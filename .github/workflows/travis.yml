@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+
+env:
+  matrix:
+    - CI=true
+
+script:
+  - npm run build-storybook
+
+deploy:
+  # 发布到 gh-pages 上
+  - provider: script
+    skip_cleanup: true
+    script: bash scripts/deploy.sh
+    on:
+      branch: master
+  # 发布到 npm 上
+  - provider: npm
+    skip_cleanup: true
+    email: xxxx@qq.com
+    api_key:
+      secure: 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
+    on:
+      branch: master
+      repo: yingliyu/fish-design
