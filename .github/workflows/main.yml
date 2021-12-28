@@ -25,7 +25,7 @@ jobs:
         run: |
           npm run build-storybook
       # 发布到 github pages 上
-      - name: Deploy
+      - name: Auto Deploy
         env:
           GH_REF: github.com/yingliyu/fish-design.git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github token
