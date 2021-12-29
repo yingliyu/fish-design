@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-29 14:34:53
+ * @LastEditTime: 2021-12-29 15:30:56
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -17,7 +17,7 @@ export default {
     backgroundColor: { control: 'color' ,description: '背景颜色',default:''},
     label: {
       description: '按钮文本',
-      default:'Button'
+      default:'Button 1'
     },
     type: {
       description: '按钮类型',
