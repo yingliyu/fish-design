@@ -17,7 +17,7 @@ jobs:
         if: github.event_name == 'push' || (github.event_name == 'create' && github.event.ref_type == 'tag')
         uses: wearerequired/git-mirror-action@v1
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN_GITEE }}
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
         with:
           source-repo: 'git@github.com:yingliyu/fish-design.git'
           destination-repo: 'git@gitee.com:yingliyu-code/fish-design.git'
