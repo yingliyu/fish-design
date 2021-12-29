@@ -13,7 +13,7 @@ jobs:
           src: 'github/yingliyu'
           dst: 'gitee/yingliyu-code'
           dst_key: ${{ secrets.ACCESS_TOKEN }}
-          # dst_token:  ${{ secrets.GITEE_TOKEN }}
+          dst_token:  ${{ secrets.ACCESS_TOKEN_GITEE }}
           static_list: "fish-design"
           force_update: true
           debug: true
@@ -53,7 +53,7 @@ jobs:
         if: github.event_name == 'push' || (github.event_name == 'create' && github.event.ref_type == 'tag')
         uses: wearerequired/git-mirror-action@v1
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PASSWORD }}
         with:
           source-repo: 'git@github.com:yingliyu/fish-design.git'
           destination-repo: 'git@gitee.com:yingliyu-code/fish-design.git'
