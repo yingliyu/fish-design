@@ -29,8 +29,8 @@ jobs:
         env:
           GH_REF: github.com/yingliyu/fish-design.git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github token
-          GITEE_REF: gitee.com/yingliyu-code/fish-design.git
-          ACCESS_GITEE_TOKEN:  ${{ secrets.ACCESS_TOKEN }} # gitee token
+          # GITEE_REF: gitee.com/yingliyu-code/fish-design.git
+          # ACCESS_GITEE_TOKEN:  ${{ secrets.ACCESS_TOKEN }} # gitee token
         run: |
           git config --global user.name "yingliyu"
           git config --global user.email "404997046@qq.com"
@@ -44,14 +44,16 @@ jobs:
           git commit -m ":construction_worker:CI built at `date +"%Y-%m-%d %H:%M:%S"`"
           # GitHub Pages
           git push --force --quiet "https://${ACCESS_TOKEN}@${GH_REF}" gh-pages:gh-pages
-          git push --force --quiet "https://${ACCESS_GITEE_TOKEN}@${GITEE_REF}" gh-pages:gh-pages
+          # git push --force --quiet "https://${ACCESS_GITEE_TOKEN}@${GITEE_REF}" gh-pages:gh-pages
     # 发布到 npm 上
-      - name: npm
-        run: |
-          skip_cleanup: true
-          email: 404997046@@qq.com
-          api_key:
-            secure: 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
-          on:
-            branch: master
-            repo: yingliyu/fish-design
+      - name: Build Gitee Pages
+          uses: yanglbme/gitee-pages-action@main
+          with:
+            # 注意替换为你的 Gitee 用户名
+            gitee-username: yingliyu-code
+            # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
+            gitee-password: ${{ secrets.GITEE_PASSWORD }}
+            # 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错
+            gitee-repo: yingliyu-code/fish-design.git
+            # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
+            branch: gh-pages

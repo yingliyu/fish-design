@@ -2,14 +2,14 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-24 11:30:10
+ * @LastEditTime: 2021-12-28 10:15:02
  * @Description:
  */
 import CheckCodeInput from '../components/CheckCodeInput';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Design System/Components/CheckCodeInput',
+  title: 'Components/CheckCodeInput',
   component: CheckCodeInput,
 } as ComponentMeta<typeof CheckCodeInput>;
 

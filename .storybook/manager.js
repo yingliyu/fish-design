@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-23 14:11:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-24 10:56:30
+ * @LastEditTime: 2021-12-28 10:15:41
  * @Description: Configure Storybook’s UI
  */
 
@@ -20,7 +20,7 @@ addons.setConfig({
   selectedPanel: undefined,
   initialActive: 'sidebar',
   sidebar: {
-    showRoots: false,
+    showRoots: true,
     collapsedRoots: ['other'],
   },
   toolbar: {

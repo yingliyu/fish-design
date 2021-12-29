@@ -2,8 +2,8 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-24 09:57:30
- * @Description: 添加 Typescript 支持
+ * @LastEditTime: 2021-12-28 16:17:12
+ * @Description: 添加 webpack 配置
  */
 const path = require('path');
 // const custom = require('../webpack.config.js')

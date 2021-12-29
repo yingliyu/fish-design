@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-24 10:54:06
+ * @LastEditTime: 2021-12-28 10:26:29
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -10,11 +10,19 @@ import { Button } from '../components/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Design System/General/Button',
+  title: 'Base/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color' ,description: '背景颜色',default:''},
+    label: {
+      description: '按钮文本',
+      default:'Button'
+    },
+    type: {
+      description: '按钮类型',
+      default:''
+    }
   },
 } as ComponentMeta<typeof Button>;
 
