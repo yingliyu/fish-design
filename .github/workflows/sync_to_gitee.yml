@@ -20,4 +20,4 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
         with:
           source-repo: 'git@github.com:yingliyu/fish-design.git'
-          destination-repo: 'git@gitee.com:yingliyu-code/fish-design.git'
+          destination-repo: 'git@gitee.com:ylyubook/fish-design.git'

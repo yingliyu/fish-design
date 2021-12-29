@@ -29,8 +29,8 @@ jobs:
         env:
           GH_REF: github.com/yingliyu/fish-design.git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github token
-          # GITEE_REF: gitee.com/yingliyu-code/fish-design.git
-          # ACCESS_TOKEN_GITEE:  ${{ secrets.ACCESS_TOKEN_GITEE }} # gitee token
+          GITEE_REF: gitee.com/ylyubook/fish-design.git
+          ACCESS_TOKEN_GITEE:  ${{ secrets.ACCESS_TOKEN_GITEE }} # gitee token
         run: |
           git config --global user.name "yingliyu"
           git config --global user.email "404997046@qq.com"
@@ -44,5 +44,6 @@ jobs:
           git commit -m ":construction_worker:CI built at `date +"%Y-%m-%d %H:%M:%S"`"
           # GitHub Pages
           git push --force --quiet "https://${ACCESS_TOKEN}@${GH_REF}" gh-pages:gh-pages
-          # git push --force --quiet "https://${ACCESS_TOKEN_GITEE}@${GITEE_REF}" gh-pages:gh-pages
+          # Gitee Pages 
+          git push --force --quiet "https://ylyubook:${ACCESS_TOKEN_GITEE}@${GITEE_REF}" gh-pages:gh-pages
    
