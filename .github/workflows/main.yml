@@ -30,8 +30,9 @@ jobs:
           GH_REF: github.com/yingliyu/fish-design.git
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # github token
           GITEE_REF: gitee.com/ylyubook/fish-design.git
-          GITEE_TOKEN:  ${{ secrets.ACCESS_TOKEN }} # gitee token
+          GITEE_TOKEN:  $ACCESS_TOKEN # gitee token
         run: |
+          echo $ACCESS_TOKEN
           git config --global user.name "yingliyu"
           git config --global user.email "404997046@qq.com"
           git clone https://${GH_REF} .deploy_git
