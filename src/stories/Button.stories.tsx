@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-29 11:28:04
+ * @LastEditTime: 2021-12-29 11:35:40
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -21,7 +21,7 @@ export default {
     },
     type: {
       description: '按钮类型',
-      default:''
+      default:'primary'
     }
   },
 } as ComponentMeta<typeof Button>;
