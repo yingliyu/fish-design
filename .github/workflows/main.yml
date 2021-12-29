@@ -44,7 +44,6 @@ jobs:
           git commit -m ":construction_worker:CI built at `date +"%Y-%m-%d %H:%M:%S"`"
           # GitHub Pages
           git push --force --quiet "https://${ACCESS_TOKEN}@${GH_REF}" gh-pages:gh-pages
-          # git push --force --quiet "https://${ACCESS_GITEE_TOKEN}@${GITEE_REF}" gh-pages:gh-pages
     # 发布到 npm 上
       - name: Build Gitee Pages
           uses: yanglbme/gitee-pages-action@main
