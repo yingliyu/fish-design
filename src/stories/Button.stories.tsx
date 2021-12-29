@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-28 10:26:29
+ * @LastEditTime: 2021-12-29 11:28:04
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -37,6 +37,7 @@ Primary.args = {
   // primary: true,
   label: 'Button',
 };
+
 // export const Sample = () => ({
 //   template: '<Button :label=label />',
 //   data: {
@@ -44,6 +45,7 @@ Primary.args = {
 //   },
 // })
 // Primary.storyName = 'I am the primary'
+
 export const Danger: ComponentStory<typeof Button> = Template.bind({});
 Danger.args = {
   label: 'Button',
