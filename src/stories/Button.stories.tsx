@@ -2,7 +2,7 @@
  * @Author: ylyu
  * @Date: 2021-12-22 14:18:32
  * @LastEditors: ylyu
- * @LastEditTime: 2021-12-30 17:10:54
+ * @LastEditTime: 2021-12-30 17:55:48
  * @Description: Button
  */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -34,7 +34,7 @@ export const Primary: ComponentStory<typeof Button> = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   type: 'primary',
-  label: '按钮',
+  label: 'BUTTON',
 };
 
 // export const Sample = () => ({
